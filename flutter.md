@@ -1,6 +1,23 @@
 
 # Flutter
 
+![fluuter](img_flutter/flutter.png)
+![fluuter](img_flutter/flutter2.png)
+
+# Árbol de Widgets
+en el build se define que árbol de widgets se va retornar
+![fluuter](img_flutter/flutter3.png)
+![fluuter](img_flutter/flutter4.png)
+![fluuter](img_flutter/flutter5.png)
+
+# Diferencias entre Stateless widget y stateful widget
+![fluuter](img_flutter/flutter6.png)
+![fluuter](img_flutter/flutter7.png)
+![fluuter](img_flutter/flutter8.png)
+![fluuter](img_flutter/flutter9.png)
+![fluuter](img_flutter/flutter10.png)
+
+
 # Primeros pasos con Text
 ```dart
 import 'package:flutter/material.dart';
