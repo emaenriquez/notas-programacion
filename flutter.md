@@ -365,3 +365,69 @@ fonts:
        fonts:
           - asset: fonts/Oswald-VariableFont_wght.ttf
 ```
+
+## uso del StatefullWidget
+```dart
+class _homeState extends State<home> {
+
+  // Declaración de variables miembro
+  String name = 'marvin';          // Nombre inicial
+  double valueprogress = 0.0;      // Progreso inicial
+  bool value = false;              // Valor booleano inicial
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),  // Barra de aplicación vacía
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              this.name , 
+              style: TextStyle(fontSize: 20),
+            ),
+            LinearProgressIndicator(value: valueprogress),  // Barra de progreso lineal
+            Switch(
+              value: value, 
+              onChanged: (value){
+                setState(() {
+                  this.value = value;  // Cambiar el valor booleano
+                });
+              })
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: cambioNombre,  // Asociar el botón de acción con el método cambioNombre
+      ),
+    );
+  }
+
+  // Método para cambiar el nombre y el progreso
+  void cambioNombre(){
+    setState(() {
+      if(name == 'marvin'){ 
+        name = 'david'; 
+      } else { 
+        name = 'marvin'; 
+      }
+      valueprogress += 0.1;  // Incrementar el progreso
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Establecer un temporizador que llama a cambioNombre cada segundo
+    Timer.periodic(Duration(seconds: 1),(value){
+      cambioNombre();
+    });
+  }
+
+  @override
+  void dispose() {
+    // Implementación de dispose (opcional)
+    super.dispose();
+  }
+}
+```
