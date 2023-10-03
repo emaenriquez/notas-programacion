@@ -431,3 +431,48 @@ class _homeState extends State<home> {
   }
 }
 ```
+## tabs
+Las pestañas son exactamente lo que crees que es. Es parte de la interfaz de usuario que navega al usuario a través de diferentes rutas (es decir, páginas) cuando se hace clic en ellas
+
+### Diseño de un TabController:
+
+```dart
+DefaultTabController(
+  // total 5 tabs
+  length: 5,
+  child:
+);
+```
+### Agregar pestañas:
+```dart
+home: DefaultTabController(
+  length: 5,
+  child: Scaffold(
+    appBar: AppBar(
+      bottom: const TabBar(
+        tabs: [
+          Tab(icon: Icon(Icons.music_note)),
+          Tab(icon: Icon(Icons.music_video)),
+          Tab(icon: Icon(Icons.camera_alt)),
+          Tab(icon: Icon(Icons.grade)),
+          Tab(icon: Icon(Icons.email)),
+        ],
+      ), 
+```
+
+### Agregar contenido a pestañas:
+
+
+```dart
+
+body: const TabBarView(
+          children: [
+            Icon(Icons.music_note),
+            Icon(Icons.music_video),
+            Icon(Icons.camera_alt),
+            Icon(Icons.grade),
+            Icon(Icons.email),
+          ],
+        ), // TabBarView
+
+```
