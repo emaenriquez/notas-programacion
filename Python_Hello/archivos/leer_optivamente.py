@@ -1,6 +1,6 @@
 
 # habriendo archivos con with open
-with open('txt\\hola.txt',encoding='UTF-8') as archivo:
+with open('archivos\\hola.txt',encoding='UTF-8') as archivo:
     contenido = archivo.read()
     print(contenido)
 
