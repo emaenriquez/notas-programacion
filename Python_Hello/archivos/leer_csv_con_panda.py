@@ -4,13 +4,13 @@ import pandas as pd
 # usando la funcion read_csv para leer los datos
 # df = pd.read_csv('txt\\datos.csv',names=["name","lastname","age"]) poder cambiarle el nombre a las columnas
 
-file_path = "archivos\\datos.csv"
+file_path =  r"C:\Users\Usuario\Documents\notas_programacion\Python_Hello\archivos\datos.csv"
 df = pd.read_csv(file_path)
 df2 = pd.read_csv(file_path)
 
 
 #mostrar los datos de la columna nombre
-nombre = df['name']
+nombre = df['nombre']
 
 cadena = '0123456789'
 # print(cadena[:2])
@@ -34,16 +34,16 @@ ultimas_fila = df.tail(3)
 # filas_y_columas_totales = df.shape()
 # filas_totales = filas_y_columas_totales[0]
 # columnas_totales = filas_y_columas_totales[1]
-filas_totales,columnas_totales = df.shape()
+filas_totales,columnas_totales = df.shape
 
 
 # obteniedno la estadistica del dataframe
-df_info = df.describe()
+df_info = df.describe
 
 # accediendo a un elemento espeficico del data df con loc
 elemento_especifico_loc = df.loc[2,'edad']
 
-elemento_especifico_loc = df.loc[:,'apellidos']
+elemento_especifico_loc = df.loc[:,'apellido']
 
 # accediendo a un elemento espeficico del data df con iloc
 elemento_especifico_iloc = df.iloc[2,2]

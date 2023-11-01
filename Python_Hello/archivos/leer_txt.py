@@ -1,5 +1,5 @@
 
-txt = open('archivos\\hola.txt',encoding='UTF-8')
+txt = open(r"C:\Users\Usuario\Documents\notas_programacion\Python_Hello\archivos\hola.txt",encoding='UTF-8')
 
 # archivo = txt.read() # para leer un archivo txt
 

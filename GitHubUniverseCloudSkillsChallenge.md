@@ -5,139 +5,89 @@
 
 # Modulos
 
-## Introduccion a git
+- [Introduccion a git](#Control-de-versiones-y-Git)
+- [Procedimientos para crear y modificar un proyecto de Git](#Procedimientos-para-crear-y-modificar-un-proyecto-de-Git)
+- [Colaboración con Git](#colaboración-con-git)
+- [Edición de código mediante creación de ramas y combinación en Git](#edición-de-código-mediante-creación-de-ramas-y-combinación-en-git)
+- [Introducción a GitHub](#introducción-a-github)
+- [Código con GitHub Codespaces](#código-con-github-codespaces)
+- [Introducción a GitHub Copilot](#introducción-a-github-copilot)
+- [Uso de GitHub Copilot con JavaScript](#uso-de-github-copilot-con-javascript)
+- [Uso de GitHub Copilot con Python](#uso-de-github-copilot-con-python)
+- [Proyecto de desafío: Crear una aplicación de consola de minijuegos con GitHub Copilot](#proyecto-de-desafío-crear-una-aplicación-de-consola-de-minijuegos-con-github-copilot)
+- [Proyecto de desafío: agregar funcionalidades de generación y análisis de imágenes a la aplicación](#proyecto-de-desafío-agregar-funcionalidades-de-generación-y-análisis-de-imágenes-a-la-aplicación)
 
-### ¿Qué es el control de versiones?
+### Control de versiones y Git
 
-Un sistema de control de versiones (VCS) es un programa o conjunto de programas que realiza un seguimiento de los cambios en una colección de archivos
-- objectivos:
-	- Recuperar fácilmente versiones anteriores de archivos individuales o de todo el proyecto
-	- permitir que varios miembros de un equipo trabajen en un proyecto, incluso en los mismos archivos, al mismo tiempo sin que eso afecte al trabajo de los demás.
-Git es un VCS de código abierto rápido, versátil, muy escalable y gratuito
+Un sistema de control de versiones (VCS) como Git permite rastrear cambios en archivos, recuperar versiones anteriores y colaborar en un proyecto sin interferir con el trabajo de otros. Git es un VCS de código abierto, rápido, versátil, escalable y gratuito.
 
-### Control de versiones distribuido
-Git es un sistema distribuido, lo que significa que el historial completo de un proyecto se almacena en el cliente y en el servidor.
-editar archivos sin conexión de red, protegerlos localmente y sincronizarlos con el servidor cuando una conexión esté disponible.
-si un servidor deja de funcionar, todavía tendrá una copia local del proyecto.
+#### Git y GitHub
 
-### Terminología de Git
+Git es un sistema de control de versiones distribuido (DVCS) utilizado por desarrolladores y colaboradores para trabajar en un proyecto. GitHub es una plataforma en la nube que utiliza Git como tecnología principal, ofreciendo características como incidencias, debates, solicitudes de incorporación de cambios, notificaciones, etiquetas, acciones, bifurcaciones y proyectos.
 
-- Árbol de trabajo: conjunto de directorios y archivos anidados que contienen el proyecto en el que se trabaja.
+#### Configuración y uso de Git
 
-- Árbol de trabajo: conjunto de directorios y archivos anidados que contienen el proyecto en el que se trabaja.
+Para configurar Git, se utilizan los comandos `git config --global user.name "<USER_NAME>"` y `git config --global user.email "<USER_EMAIL>"`. Para iniciar un nuevo repositorio, se crea una carpeta para el proyecto (por ejemplo, `mkdir Cats`), se navega a ella (`cd Cats`) y se inicializa (`git init --initial-branch=main`).
 
-- Hash: número generado por una función hash que representa el contenido de un archivo u otro objeto como un número de dígitos fijo  Una ventaja de usar códigos hash es que Git puede indicar si un archivo ha cambiado aplicando un algoritmo hash a su contenido y comparando el resultado con el hash anterior. Si se cambia la marca de fecha y hora del archivo, pero el hash del archivo no, Git sabe que el contenido del archivo no se ha modificado.
+Los comandos básicos de Git incluyen `git status` para ver el estado del árbol de trabajo, `git add` para almacenar provisionalmente los cambios, `git commit` para confirmar los cambios, `git log` para ver información sobre las confirmaciones anteriores y `git help` para obtener ayuda sobre los comandos de Git.
 
-- Objeto: un repositorio de Git contiene cuatro tipos de objetos, cada uno identificado de forma única por un hash SHA-1. 
-	- Un objeto blob contiene un archivo normal. 
-	- Un objeto árbol representa un directorio, y contiene nombres, valores hash y permisos. 
-	- Un objeto de confirmación representa una versión específica del árbol de trabajo. Una etiqueta es un nombre asociado a una confirmación.
+### Procedimientos para crear y modificar un proyecto de Git
 
-- Confirmación: Significa que se confirman los cambios realizados para que otros usuarios también puedan verlos.
+#### Creación y adición de un archivo
 
-- Rama: serie con nombre de confirmaciones vinculadas. La confirmación más reciente en una rama se denomina nivel superior. La rama predeterminada, que se crea al inicializar un repositorio, se denomina main, y suele tener el nombre master en Git. El nivel superior de la rama actual se denomina HEAD. Las ramas son una característica increíblemente útil de Git porque permiten a los desarrolladores trabajar de forma independiente (o conjunta) en ramas y luego combinar los cambios en la rama predeterminada.
-
-- Remoto: referencia con nombre a otro repositorio de Git. Cuando se crea un repositorio, Git crea un remoto denominado origin, que es el remoto predeterminado para las operaciones de envío e incorporación de cambios.
-
-- Comandos, subcomandos y opciones: las operaciones de Git se realizan mediante comandos como git push y git pull. git es el comando, mientras que push o pull es el subcomando. El subcomando especifica la operación que quiere que Git realice. Los comandos suelen ir acompañados de opciones, que usan guiones (-) o guiones dobles (--). Por ejemplo, git reset --hard.
-
-### Git y GitHub
--  Git es un sistema de control de versiones distribuido (DVCS) que varios desarrolladores y otros colaboradores pueden usar para trabajar en un proyecto
-- GitHub es una plataforma en la nube que usa Git como tecnología principal
-
-Entre las características clave que ofrece GitHub se incluyen las siguientes:
-- Incidencias
-- Debates
-- Solicitudes de incorporación de cambios
-- Notificaciones
-- Etiquetas
-- Acciones
-- Bifurcaciones
-- Proyectos
-
-### Configuración de Git
-
-git --version
-git config --global user.name "<USER_NAME>"
-git config --global user.email "<USER_EMAIL>"
-git config --list
-
-user.name=User Name
-user.email=user-name@contoso.com
-
-### Configuración del repositorio de Git
-
-Git funciona buscando cambios en los archivos dentro de una determinada carpeta. Vamos a crear una carpeta que actúe como árbol de trabajo (directorio del proyecto) y a permitir que Git sepa sobre ella para que pueda comenzar a seguir los cambios
-
-Cree una carpeta con el nombre Cats. Esta carpeta va a ser el directorio del proyecto, también denominado árbol de trabajo. 
-
-mkdir Cats
-
-Vaya al directorio del proyecto mediante el comando
-cd Cats
-
-Ahora, inicialice el nuevo repositorio y establezca el nombre de la rama predeterminada en main:
-
-git init --initial-branch=main
-git init -b main
-
-git init
-git checkout -b main
-
-Después de ejecutar el comando de inicialización, debería ver una salida similar a la de este ejemplo:
-Initialized empty Git repository in /home/<user>/Cats/.git/
-
-Switched to a new branch 'main'
-
-Ahora, use un comando git status para mostrar el estado del árbol de trabajo:
-git status
-
-Git responde con esta salida, que indica que master es la rama actual. (De hecho, también es la única rama). Por ahora todo está claro.
-
-On branch master
-
- No commits yet
-
- nothing to commit (create/copy files and use "git add" to track)
-
-Use un comando ls para mostrar el estado del árbol de trabajo:
-ls -a
-
-
-### Ayuda desde Git
-git --help
-
-### Comandos básicos de Git
-
-- git status
-	- muestra el estado del árbol de trabajo Permite ver los cambios que Git está siguiendo en ese momento para poder decidir si quiere pedir a Git que tome otra instantánea.
-- git add
-	- Va a usar git add para almacenar provisionalmente los cambios a fin de prepararse para una confirmación. 
-	- Va a usar git add para almacenar provisionalmente los cambios a fin de prepararse para una confirmación. 
-- git commit
-	-  una confirmación es el pequeño fragmento de datos que asigna una identidad única a los cambios que se confirman. Los datos que se guardan en una confirmación incluyen el nombre del autor y la dirección de correo electrónico, la fecha, los comentarios sobre lo que se ha hecho (y por qué)
-- git log 
-	- El comando git log permite ver información sobre las confirmaciones anteriores. Cada confirmación tiene un mensaje adjunto , y el comando git log permite imprimir información sobre las confirmaciones más recientes, como su marca de tiempo, el autor y un mensaje de confirmación
-- git help
-	- Por ejemplo, git commit --help muestra una página que proporciona más información sobre el comando git commit y cómo usarlo
-
-
-## Procedimientos para crear y modificar un proyecto de Git
-
-
-### Ejercicio: Inicio de un proyecto
-
-Creación y adición (almacenamiento provisional) de un archivo
-
-Use un comando touch para crear un archivo denominado index.html:
-
-touch index.html
-git status
+Para crear un archivo y realizar la primera confirmación, se utilizan los siguientes comandos:
+it status
 git add .
+git commit -m "Create an empty index.html file"
 
-Realización de la primera confirmación
 
-Utilice el comando siguiente para crear otra confirmación:
-git commit index.html -m "Create an empty index.html file"
+#### Recuperación de archivos
 
-Git solo realiza el seguimiento de los cambios en los archivos, no en los directorios.
+Si se elimina un archivo por accidente, se puede recuperar con `git checkout -- <file_name>`. Si se elimina un archivo con `git rm`, se puede recuperar con `git reset` y `git checkout`:
+bash
+git rm index.html
+git reset HEAD index.html
+git checkout -- index.html
+
+
+#### Reversión de una confirmación
+Si se comete un error en una confirmación, se puede revertir con `git revert`:
+bash
+git commit -m "Purposely overwrite the contents of index.html" index.html
+git revert --no-edit HEAD
+
+Estos comandos permiten revertir los cambios confirmados y volver a la versión anterior del archivo.
+
+### Colaboración con Git
+
+#### Clonación de un repositorio (git clone)
+Se copia un repositorio con `git clone`, apuntando a una URL o ruta de acceso.
+
+#### Repositorios remotos (git pull)
+`git pull` copia cambios del repositorio remoto al local, insertándolos en el árbol de trabajo.
+
+#### Solicitudes de incorporación de cambios (git request-pull)
+`git request-pull -p origin/main .` permite revisar cambios de otros antes de incorporarlos al trabajo en el sitio web.
+
+#### Creación de un remoto (git remote) y finalización de la solicitud de incorporación de cambios (git pull)
+Se configura el repositorio de otro desarrollador como remoto con `git remote`, luego se usa ese remoto para incorporaciones y solicitudes de incorporación de cambios con `git pull`.
+
+#### Clonación de un repositorio
+
+```bash
+cd ..
+mkdir Alice
+cd Alice
+git clone ../Cats .
+```
+
+Ejercicio: Colaboración mediante un repositorio compartido
+
+### Edición de código mediante creación de ramas y combinación en Git
+### Introducción a GitHub
+### Código con GitHub Codespaces
+### Código con GitHub Codespaces
+### Uso de GitHub Copilot con JavaScript
+### Uso de GitHub Copilot con Python
+### Proyecto de desafío: Crear una aplicación de consola de minijuegos con GitHub Copilot
+### Proyecto de desafío: agregar funcionalidades de generación y análisis de imágenes a la aplicación
