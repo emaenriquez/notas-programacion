@@ -11,8 +11,9 @@ def sumar():
         try:
             res = int(num1) + int(num2)
         # pedirle de nuevo los numero si lanza un excepcion
-        except:
+        except Exception as e:
             print('por favor no te detengas')
+            print(f'Error: {e} el nombre es: {type(e).__name__}')
         # si todo salio bien terminamos el bucle
         else:
             break
