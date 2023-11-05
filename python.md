@@ -585,3 +585,5 @@ with open('txt\\hola.txt','a',encoding='UTF-8') as archivo:
     for i in range(5):
         archivo.write(f'los numero son: {i}\n')
 ```
+
+un evento es cualquier cosa que suceda nuestro programa

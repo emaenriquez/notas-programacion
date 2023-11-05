@@ -84,6 +84,31 @@ git clone ../Cats .
 Ejercicio: Colaboración mediante un repositorio compartido
 
 ### Edición de código mediante creación de ramas y combinación en Git
+
+#### Ramas en Git
+El desarrollo de software se realiza casi por completo en ramas. El objetivo es mantener limpia la rama principal hasta que el trabajo esté listo . Después, inserte los cambios en la rama principal, o envíe una solicitud de incorporación de cambios para fusionar los cambios.
+
+#### Estructura y nomenclatura de las ramas
+Una rama es simplemente una cadena de confirmaciones que se ramifica a partir de la línea principal de desarrollo, como una rama de un árbol.
+
+#### Creación y modificación de ramas (rama de Git y desprotección de Git)
+Puede crear una rama con el comando git branch. Cambie entre las ramas con el comando git checkout.
+checkout actualiza todo lo que hay en el árbol de trabajo y el índice para que coincida con la confirmación especificada (en este caso, el encabezado de la rama).
+
+#### Combinación de ramas (combinación de Git)
+Una vez que haya finalizado algún trabajo en una rama, quizá una característica o una corrección de errores, querrá combinar la rama de nuevo con la rama principal. Puede usar el comando git merge para combinar una rama específica con la rama actual.
+
+```bash
+# Switch back to the main branch
+git checkout main
+
+# Merge my-feature branch into main
+git merge my-feature
+```
+hacer un modulo de git universe cloud skills challenge
+hacer un ejercicio de exercism
+hacer el ejercicio de codember
+
 ### Introducción a GitHub
 ### Código con GitHub Codespaces
 ### Código con GitHub Codespaces
