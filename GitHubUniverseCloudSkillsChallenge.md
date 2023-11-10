@@ -11,7 +11,7 @@
 - [Edición de código mediante creación de ramas y combinación en Git](#edición-de-código-mediante-creación-de-ramas-y-combinación-en-git)
 - [Introducción a GitHub](#introducción-a-github)
 - [Código con GitHub Codespaces](#código-con-github-codespaces)
-- [Introducción a GitHub Copilot](#introducción-a-github-copilot)
+- [Introducción a GitHub Copilot](#Introducción-a-GitHub-Copilot)
 - [Uso de GitHub Copilot con JavaScript](#uso-de-github-copilot-con-javascript)
 - [Uso de GitHub Copilot con Python](#uso-de-github-copilot-con-python)
 - [Proyecto de desafío: Crear una aplicación de consola de minijuegos con GitHub Copilot](#proyecto-de-desafío-crear-una-aplicación-de-consola-de-minijuegos-con-github-copilot)
@@ -105,13 +105,133 @@ git checkout main
 # Merge my-feature branch into main
 git merge my-feature
 ```
-hacer un modulo de git universe cloud skills challenge
-hacer un ejercicio de exercism
-hacer el ejercicio de codember
+
 
 ### Introducción a GitHub
+
+#### ¿Qué es GitHub?
+
+Aquí se describen las principales características de GitHub que se usan a diario para administrar y contribuir a proyectos de software.
+
+#### El flujo de GitHub
+
+Además de ser una plataforma de desarrollo de software colaborativo, GitHub ofrece también un flujo de trabajo diseñado para optimizar el uso de sus diversas características
+
+#### Git y GitHub
+
+Git es un sistema de control de versiones distribuido (DVCS) que permite que varios desarrolladores u otros colaboradores trabajen en un proyecto.
+
+GitHub es una plataforma en la nube que usa Git como tecnología principal. Simplifica el proceso de colaborar en proyectos y proporciona un sitio web, herramientas de línea de comandos y un flujo global que permite a los desarrolladores y usuarios trabajar juntos.
+
+#### Las características principales de GitHub incluyen:
+
+- Issues
+- Debates
+- Solicitudes de incorporación de cambios
+- Notificaciones
+- Etiquetas
+- Acciones
+- Horquillas
+- Proyectos
+
+#### Incidencias
+
+Las incidencias son el elemento en el que se produce la mayor parte de la comunicación entre los consumidores y el equipo de desarrollo de un proyecto. Puede crear una incidencia para analizar una amplia variedad de temas, como informes de errores, solicitudes de características, aclaraciones sobre la documentación, etc. Una vez creado un problema, puede asignar propietarios, etiquetas, proyectos e hitos. Las incidencias también se pueden asociar con solicitudes de incorporación de cambios y otros elementos de GitHub para proporcionar rastreabilidad en el futuro.
+
+#### Notificaciones
+Como plataforma colaborativa, GitHub ofrece notificaciones para prácticamente todos los eventos que se producen en un flujo de trabajo determinado.
+
+#### Ramas
+Las ramas son la manera preferida de crear cambios en el flujo de GitHub. Proporcionan aislamiento para que varias personas puedan trabajar simultáneamente en el mismo código de manera controlada.
+
+#### Confirmaciones
+Un commit refleja uno o varios cambios en uno o varios archivos de una rama. Cada vez que se crea una confirmación, se le asigna un identificador único y se realiza un seguimiento de ella, junto con la hora y el colaborador.
+
+#### Solicitudes de incorporación de cambios
+Una solicitud de incorporación de cambios es un mecanismo que sirve para indicar que las confirmaciones de una rama están listas para combinarse en otra. El desarrollador que envíe la solicitud de incorporación de cambios normalmente solicitará a uno o varios revisores que comprueben el código y aprueben la combinación
+
+#### Etiquetas
+Las etiquetas proporcionan una manera de categorizar y organizar las incidencias y las solicitudes de incorporación de cambios en un repositorio
+
+#### Acciones
+Las acciones de GitHub proporcionan funcionalidad de flujo de trabajo y automatización de tareas en un repositorio. Puede usar las acciones para simplificar los procesos del ciclo de vida de desarrollo de software e implementar la integración y la implementación continuas (CI/CD).
+
+#### Clonación y bifurcación
+
+- Clonar un repositorio: al clonar un repositorio, se realiza una copia del repositorio y de su historial en el equipo local. 
+
+- Bifurcación de un repositorio: al bifurcar un repositorio, se realiza una copia del repositorio en la cuenta de GitHub. El repositorio principal se denomina ascendente, mientras que la copia bifurcada se conoce como origen. Una vez que haya bifurcado un repositorio en la cuenta de GitHub, puede clonarlo en el equipo local. 
+
+
+¿Cuándo debería clonar un repositorio en lugar de bifurcarlo? Si está trabajando con un repositorio y tiene acceso de escritura, puede clonarlo en el equipo local. Desde allí, puede realizar modificaciones e introducir los cambios directamente en el repositorio de origen.
+
+Si necesita trabajar con un repositorio creado por otro propietario, como github/example, y no tiene acceso de escritura, puede bifurcar el repositorio en su cuenta de GitHub y, luego, clonar la bifurcación en el equipo local. 
+
+
 ### Código con GitHub Codespaces
-### Código con GitHub Codespaces
+
+#### GitHub Codespaces 
+es un entorno de desarrollo instantáneo basado en la nube que usa un contenedor para proporcionar lenguajes, herramientas y utilidades comunes para el desarrollo.
+
+#### Ciclo de vida de un codespace
+GitHub Codespaces se puede configurar, lo que le permite crear un entorno de desarrollo personalizado para el proyecto.
+
+Al configurar un entorno personalizado para el proyecto y 
+puedo tener una configuración de codespace repetible para todos los usuarios del proyecto.
+
+#### Crear un codespace
+Puede crear un codespace en GitHub.com, en Visual Studio Code o en la CLI de GitHub. Existen cuatro formas de crear un codespace:
+
+- Desde una plantilla de GitHub o desde cualquier repositorio de plantillas de
+GitHub.com para iniciar un nuevo proyecto
+- Desde una rama del repositorio para el trabajo de nuevas características.
+- Desde una solicitud de cambios abierta para explorar el trabajo en curso
+- Desde una confirmación en el historial de un repositorio para investigar un error en
+un punto específico del tiempo.
+
+Puede usar un codespace temporalmente para probar código o volver al mismo codespace para realizar trabajo de características de larga duración.
+
+Puede crear más de un codespace por repositorio o incluso por rama. Sin embargo, hay límites respecto al número de codespaces que puede crear y ejecutar al mismo tiempo. Si alcanza el número máximo de codespaces e intenta crear otro, aparece un mensaje que indica que se debe quitar o eliminar un codespace existente para poder crear uno nuevo.
+
+Puede crear un nuevo codespace cada vez que desarrolle en GitHub Codespaces o mantener un codespace de larga duración para una característica. Si va a iniciar un proyecto nuevo, cree un codespace a partir de una plantilla y publíquelo en un repositorio de GitHub más adelante.
+
+Al crear un codespace cada vez que se trabaja en un proyecto, debe enviar los cambios periódicamente para asegurarse de que todas las confirmaciones nuevas estén en GitHub. Al usar un codespace de larga duración para un proyecto nuevo, incorpore los cambios desde la rama predeterminada del repositorio cada vez que empiece a trabajar en el codespace. Esto permite al entorno obtener las últimas confirmaciones. El flujo de trabajo es similar a trabajar con un proyecto en una máquina local.
+
+Los administradores de repositorios pueden habilitar las precompilaciones de GitHub Codespaces para que un repositorio acelere la creación de un codespace.
+
+Para ver un tutorial y una guía detallados, consulte los recursos Guía para principiantes para aprender a codificar con GitHub Codespaces y Desarrollar en un codespace que se encuentran en la unidad Resumen al final de este módulo.
+
+
+#### Al crear un codespace tienen cuatro procesos:
+
+- Se asignan al codespace una máquina virtual y almacenamiento.
+- Se crea un contenedor.
+- Se establece una conexión con el codespace.
+- Se realiza una configuración posterior a la creación.
+
+#### Guardar cambios en un codespace
+Cuando se conecta a un codespace a través de la web, se habilita de forma automática la opción de autoguardado para guardar los cambios cuando haya transcurrido una cantidad de tiempo específica
+
+#### Apertura de un codespace existente
+Para reanudar un codespace existente, puede ir al repositorio donde existe el codespace, presionar la tecla "," en el teclado y seleccionar Reanudar este codespace
+
+#### Tiempos de espera de un codespace
+Si un codespace está inactivo o si sale del codespace sin detenerlo de forma explícita, la aplicación agota el tiempo de espera después de un período de inactividad y deja de ejecutarse.
+
+#### Cerrar o detener un codespace
+Si sale del codespace sin ejecutar el comando para detenerlo (por ejemplo, cierra la pestaña del explorador) o si deja el codespace en ejecución sin interacción, el codespace y sus procesos en ejecución continuarán durante el período de tiempo de espera de inactividad
+
+#### Recompilación de un codespace
+Puede recompilar el codespace para implementar cambios en la configuración de contenedor de desarrollo. Para la mayoría de los usos, puede crear un codespace como alternativa a recompilar uno
+
+#### Eliminar un codespace
+Puede crear un codespace para una tarea determinada. Después de enviar los cambios a una rama remota, puede eliminar ese codespace de forma segura.
+
+### Introducción a GitHub Copilot
+
+#### Introducción
+GitHub Copilot es la primera herramienta para desarrolladores de inteligencia artificial a escala del mundo que puede ayudarle a escribir código más rápidamente y con menos trabajo
+
 ### Uso de GitHub Copilot con JavaScript
 ### Uso de GitHub Copilot con Python
 ### Proyecto de desafío: Crear una aplicación de consola de minijuegos con GitHub Copilot
