@@ -50,5 +50,23 @@ apps.py configuracion de la app solo para una app
 models.py para crear clases que se crean tablas sql
 tests.py testing 
 
-# Hello word
+# Include
+sirve para incluir un bloque de urls de una aplicacion
 
+
+```python
+
+    from django.contrib import admin
+    from django.urls import path, include
+    
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        # prefijo si pones home tenemos que poner en el localhost home/about 
+        path('',include('myapp.urls'))
+    ]
+```
+
+# Database modelos
+
+migrate es una forma de actulizar nuestra base de datos a partir de python
+lo que es que puede crear esas tablas ese esquema de la base de datos
