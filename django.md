@@ -171,3 +171,5 @@ sino encuentra el nombre devuelve un query vacio
 p = Project.objects
 
 p.filter(name_starswith="todo list")
+
+# params
